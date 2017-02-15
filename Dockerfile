@@ -7,9 +7,11 @@ RUN useradd -d /$USER -m -U $USER
 
 RUN echo 'deb http://http.debian.net/debian jessie-backports main' > /etc/apt/sources.list.d/jessie-backports.list \ 
     && apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends wget openjdk-8-jre-headless
+    && DEBIAN_FRONTEND=noninteractive apt-get -t jessie-backports install -y --no-install-recommends wget openjdk-8-jre-headless
 
-RUN wget -O /$USER/$USER.jar https://download.jetbrains.com/charisma/youtrack-7.0.27505.jar
+ENV YOUTRACK_VERSION=2017.1.30973
+
+RUN wget -O /$USER/$USER.jar https://download.jetbrains.com/charisma/youtrack-$YOUTRACK_VERSION.jar
 
 RUN apt-get remove -y --purge --auto-remove wget \
     && apt-get clean \
