@@ -11,4 +11,5 @@ exec $JAVA_HOME/bin/java \
     -Xmx1g -Djava.awt.headless=true \
     -Djava.security.egd=/dev/zrandom \
     -Djavax.net.ssl.trustStore=$JAVA_HOME/lib/security/cacerts \
+    -Djetbrains.youtrack.baseUrl=$BASE_URL \
     -jar $JAR $PORT 2>&1

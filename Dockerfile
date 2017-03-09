@@ -1,7 +1,8 @@
 FROM debian:jessie
 MAINTAINER Michael Ledin "mledin89@gmail.com"
 
-ENV USER=youtrack
+ENV USER youtrack
+ENV BASE_URL http://localhost
 
 RUN useradd -d /$USER -m -U $USER
 
