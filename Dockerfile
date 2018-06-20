@@ -10,7 +10,7 @@ RUN echo 'deb http://http.debian.net/debian jessie-backports main' > /etc/apt/so
     && apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get -t jessie-backports install -y --no-install-recommends wget openjdk-8-jre-headless
 
-ENV YOUTRACK_VERSION=2018.1.41561
+ENV YOUTRACK_VERSION=2018.2.42337
 
 RUN wget -O /$USER/$USER.jar https://download.jetbrains.com/charisma/youtrack-$YOUTRACK_VERSION.jar
 
